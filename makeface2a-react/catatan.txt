@@ -1,0 +1,98 @@
+kita pakai react sekarang tapi gunakana link 
+kita ambil dari unpkg.com 
+disini adalah smacam server yg hdiup di cloud yg sediakan access utk 
+para client disluruh internet agar bisa pakai tanpa install local di computer
+dimana kita tinggal buat scrip link ngarah keadress librarya di cloud 
+unpkg.com 
+pilih yg react versi 17 saja 
+https://unpkg.com/browse/react@17.0.0/umd/react.production.min.js
+
+pasang di atas bidy di head utk link dgn script tag 
+di body kita test dgn scrip 
+<script>console.log(react) </script>
+dari source page livesrever pilih console
+hasil dari console.log(React) 
+Object
+Children: {map: ƒ, forEach: ƒ, count: ƒ, toArray: ƒ, only: ƒ}
+Component: ƒ v(a,b,e)
+Fragment: Symbol(react.fragment)
+Profiler: Symbol(react.profiler)
+PureComponent: ƒ K(a,b,e)
+StrictMode: Symbol(react.strict_mode)
+Suspense: Symbol(react.suspense)
+cloneElement: ƒ (a,b,c)
+createContext: ƒ (a,b)
+createElement: ƒ ca(a,b,e)
+createFactory: ƒ (a)
+createRef: ƒ ()
+forwardRef: ƒ (a)
+isValidElement: ƒ M(a)
+lazy: ƒ (a)
+memo: ƒ (a,b)
+useCallback: ƒ (a,b)
+useContext: ƒ (a,b)
+useDebugValue: ƒ (a, b)
+useEffect: ƒ (a,b)
+useImperativeHandle: ƒ (a,b,c)
+useLayoutEffect: ƒ (a,b)
+useMemo: ƒ (a,b)
+useReducer: ƒ (a,b,c)
+useRef: ƒ (a)
+useState: ƒ (a)
+version: "17.
+/////////////////////end hasil console.log(React )
+berarti kita sudah bisa gunakan libarry react di js kita 
+jadi intinya kita ini gunakan cdn content delivery server yg mana kita bisa gunakan source scara online
+nah utk pilihan local bisa install dgn libarry npm 
+nah unpkg diatas tdi adalah salah satu dari CDN 
+kit ajuga gunakan rollup.js 
+
+kita haru buat file index.js 
+idmana sama import React rom 'react'; 
+            import ReactDOM from 'react-dom'
+
+ nah kita juga buat bundle.js hasil dari menggunakan rollup.js 
+ kita install global rollup.js aslinya ini mirip dgn webpack
+ mpm i --globall rollup
+ stelahnya kita mau buat index.js kita bundel jadi bundle.js 
+ ini kita buat jadi template supaya nnti bisa jadi unctional yg bisa di pakai oleh react
+ These commands assume the entry point to your application is named main.js, and that you'd like all imports compiled into a single file named bundle.js.
+
+For browsers:
+
+# compile to a <script> containing a self-executing function ('iife')
+#nah utk kasus ini kita pilih yg browser karena kita gak pakai react library internal 
+
+rollup main.js --file bundle.js --format iife
+
+For Node.js:
+# compile to a CommonJS module ('cjs')
+rollup main.js --file bundle.js --format cjs
+
+
+
+For both browsers and Node.js:
+
+# UMD format requires a bundle name
+rollup main.js --file bundle.js --format umd --name "myBundle"
+
+
+
+////utk project ini pilih yg bundle utk browser ya ?!
+#dari atas kita pilih browser krn kita react pake unpkg /umd dari browser
+ rollup index.js --file bundle.js --format iife
+ hasilya sperti ini :
+ dalam isi bundle.js ===>isi iife
+ (function() { 
+     'use strict';
+     console.log(React)
+ }())
+
+//ada kalimat2 dari source disini 
+setelah buat itu di index.js pada body scruipt ubah 
+<script src="bundle.js"> </script>
+dan di index.js kita tulis 
+import React from 'react'
+import ReactDOM from 'react-dom'
+//jangan lupa kita juga butuh react-dom dari unpkg.com 
+taruh linknya di index.html seprti react sblumnya 

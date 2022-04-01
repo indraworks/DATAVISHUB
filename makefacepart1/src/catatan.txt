@@ -1,0 +1,8 @@
+utk part 1 kita bikin pake react.
+utk part 2 kita bikin dgn d3 js yg dipelajari adalah :
+-starting d3js library
+-mnggunakan arc from d3-shape package
+-pnggunaan svg path eleement
+-svg group dan transform atribut
+-pngunaan ES6 template literals
+-adding muout to ourface 
