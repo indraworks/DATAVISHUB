@@ -1,0 +1,13 @@
+jadi gini ukt pengaturan kita gunakan 
+yg namanya tag yg mana sususunanya sudah sesuai dgn kaidah html 
+nah css adalah selector yg mana merupakan property dari tiap tag
+mau diapakan tag tadi perbesar warna jarak dll
+nah yg didalam tag itu yg dimunculkan ke browser html
+<circle r="2"/> ngasih bbuat lingkaran svg punya jari2
+nah yg masalah tentunya silingkaran di html ada dipojok kanan (0,0)
+utk itu kita gunakan tag dan margin tuk bisa geser 
+atau pading agar ketengah 
+
+//nah tentang svg bisa dilihat di https://www.w3schools.com/graphics/svg_intro.asp
+liat disana dan belajar disana 
+\
